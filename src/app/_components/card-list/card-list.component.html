@@ -1,2 +1,5 @@
 <app-search-box></app-search-box>
-<app-weather-card *ngFor="let city of cities" [cityShown]="city"> </app-weather-card>
+<ul class="drop-area" cdkDropList (cdkDropListDropped)="drop($event)">
+  <app-weather-card *ngFor="let city of cities" [cityShown]="city">
+  </app-weather-card>
+</ul>

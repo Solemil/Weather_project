@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,13 +13,19 @@ import { MatCardModule } from '@angular/material/card';
 import { SearchBoxComponent } from './_components/search-box/search-box.component';
 
 @NgModule({
-  declarations: [AppComponent, WeatherCardComponent, CardListComponent, SearchBoxComponent],
+  declarations: [
+    AppComponent,
+    WeatherCardComponent,
+    CardListComponent,
+    SearchBoxComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MatCardModule,
+    DragDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
