@@ -1,6 +1,6 @@
-export interface Weather {
-    name: string;
-    country: string;
-    temp: string;
-    weather: string
-}
+// export interface Weather {
+//     name: string;
+//     country: string;
+//     temp: number;
+//     weather: string
+// }

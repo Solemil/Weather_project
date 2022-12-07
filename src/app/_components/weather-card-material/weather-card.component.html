@@ -1,18 +1,18 @@
 <section class="card flex">
   <div class="flex-column">
     <p class="city">
-      {{ city.name }}
+      {{ cityShown }}
     </p>
     <p>
-      {{ city.country }}
+      <!-- {{ city.country }} -->
     </p>
   </div>
   <div class="flex">
-    <p class="temp">{{ city.temp }}°C</p>
+    <p class="temp">{{ temp }}°C</p>
     <img
       class="icon"
-      src="../assets/icons/{{ city.weather }}.png"
-      alt="{{ city.weather }} icon"
+      src="../assets/icons/{{ icon }}.png"
+      alt="{{ icon }} icon"
     />
   </div>
 </section>

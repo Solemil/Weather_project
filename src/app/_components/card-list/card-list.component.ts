@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { cities } from 'src/app/_collections/mock/cities';
+import { cityList } from 'src/app/_models/cityList';
+
 import { ApiService } from 'src/app/_services/api.service';
 
 @Component({
@@ -8,9 +10,5 @@ import { ApiService } from 'src/app/_services/api.service';
   styleUrls: ['./card-list.component.css'],
 })
 export class CardListComponent {
-  readonly cities: any[] = cities;
-
-  constructor(private apiService: ApiService) {
-    this.apiService.testGetData();
-  }
+  readonly cities: any[] = cityList;
 }

@@ -9,9 +9,10 @@ import { CardListComponent } from './_components/card-list/card-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatCardModule } from '@angular/material/card';
+import { SearchBoxComponent } from './_components/search-box/search-box.component';
 
 @NgModule({
-  declarations: [AppComponent, WeatherCardComponent, CardListComponent],
+  declarations: [AppComponent, WeatherCardComponent, CardListComponent, SearchBoxComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
