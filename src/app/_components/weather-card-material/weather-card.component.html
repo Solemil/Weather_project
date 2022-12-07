@@ -1,21 +1,21 @@
 <li class="card flex" cdkDrag>
   <div class="flex-column">
     <p class="city">
-      {{ cityShown }}
+      {{ cityCard.name }}
     </p>
     <p>
-      <!-- TODO {{ city.country }} -->
+      {{ cityCard.country }}
     </p>
   </div>
   <div class="flex">
-    <p class="temp">{{ temp }}°C</p>
+    <p class="temp">{{ cityCard.temp }}°C</p>
     <img
       class="icon"
-      src="../assets/icons/{{ icon }}.png"
-      alt="{{ icon }} icon"
+      src="../assets/icons/{{ cityCard.icon }}.png"
+      alt="{{ cityCard.icon }} icon"
     />
   </div>
-  <p class="close-x" (click)="closeCard(cityShown)">x</p>
+  <p class="close-x" (click)="closeCard()">x</p>
 </li>
 
 <!-- <mat-card class="example-card">

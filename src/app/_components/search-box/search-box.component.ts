@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { cityList } from 'src/app/_models/cityList';
 
 @Component({
@@ -7,9 +7,10 @@ import { cityList } from 'src/app/_models/cityList';
   styleUrls: ['./search-box.component.css'],
 })
 export class SearchBoxComponent {
+  @Output() searchSubmit = new EventEmitter<string>()
   name = 'searchBox';
   constructor() {}
   searchCity(searchText: string) {
-    cityList.unshift(searchText);
+    this.searchSubmit.emit(searchText);
   }
 }
