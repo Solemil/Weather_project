@@ -1,12 +1,11 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component } from '@angular/core';
-// import { cities } from 'src/app/_collections/mock/cities';
+
 import { cityList } from 'src/app/_models/cityList';
 import { CardInfo } from 'src/app/_models/weather';
 import { ResultCountry } from 'src/app/_models/weather';
 import { ApiService, WeatherResults } from 'src/app/_services/api.service';
 
-// import { ApiService } from 'src/app/_services/api.service';
 
 @Component({
   selector: 'app-card-list',
