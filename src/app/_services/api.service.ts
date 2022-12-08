@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment as env } from 'src/environment/environment';
 import { firstValueFrom } from 'rxjs';
-
+import { ResultWeather, ResultCountry } from '../_models/interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -10,16 +10,14 @@ import { firstValueFrom } from 'rxjs';
 export class ApiService {
   constructor(private http: HttpClient) {}
 
-
-
-  async getWEather(city: string): Promise<WeatherResults> {
+  async getWeather(city: string): Promise<ResultWeather> {
     try {
-      let url = `${env.api.baseURL}${env.api.getWeather}`;
+      let url = `${env.weatherApi.baseURL}${env.weatherApi.getWeather}`;
       url = url.replace('{city name}', city);
-      url = url.replace('{API key}', env.api.weatherApiKey);
+      url = url.replace('{API key}', env.weatherApi.weatherApiKey);
 
-      return await firstValueFrom(this.http.get<WeatherResults>(url)).then(
-        (res: WeatherResults) => {
+      return await firstValueFrom(this.http.get<ResultWeather>(url))
+        .then((res: ResultWeather) => {
           console.log('getWEather sikeres', res);
           return res;
         }
@@ -29,18 +27,28 @@ export class ApiService {
       throw error;
     }
   }
+
+  async getCountry(countryCode: string): Promise<ResultCountry> {
+    try {
+      let url = env.countryApi.baseURL
+      url = url.replace('{Code}', countryCode)
+
+      return await firstValueFrom(this.http.get<ResultCountry[]>(url))
+        .then((res: ResultCountry[]) => {
+          console.log('getCountry sikeres', res);
+          return res[0];
+        }
+      );
+    } catch (error) {
+      console.error('getCountry sikertelen', error);
+      throw error;
+    }
+  }
+
+
+
+
 }
 
-export interface WeatherResults {
-  main: {
-    temp: number;
-  };
-}
 
-export interface WeatherInCity {
-  // name: string;
-  // country: string;
-  temp: number;
-  // weather: string
-}
 

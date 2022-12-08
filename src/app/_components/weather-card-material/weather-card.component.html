@@ -1,58 +1,24 @@
-<section class="card flex">
+<li class="card flex" cdkDrag>
   <div class="flex-column">
     <p class="city">
-      {{ cityShown }}
+      {{ cityCard.name }}
     </p>
     <p>
-      <!-- {{ city.country }} -->
+      {{ cityCard.country }}
     </p>
   </div>
   <div class="flex">
-    <p class="temp">{{ temp }}°C</p>
+    <p class="temp">{{ cityCard.temp }}°C</p>
     <img
       class="icon"
-      src="../assets/icons/{{ icon }}.png"
-      alt="{{ icon }} icon"
+      src="http://openweathermap.org/img/w/{{ cityCard.icon }}.png"
+      alt="{{ cityCard.icon }} icon"
     />
+    <!-- <img
+      class="icon"
+      src="../assets/icons/{{ cityCard.icon }}.png"
+      alt="{{ cityCard.icon }} icon"
+    /> -->
   </div>
-</section>
-
-<!-- <mat-card class="example-card">
-  <mat-card-header>
-    <mat-card-title-group>
-      <mat-card-title>{{ city.name }}</mat-card-title>
-      <mat-card-subtitle>{{ city.country }}</mat-card-subtitle>
-      <img
-        mat-card-sm-image
-        src="../assets/icons/{{ city.weather }}.png"
-        alt="{{ city.weather }} icon"
-      />
-    </mat-card-title-group>
-  </mat-card-header>
-  <mat-card-content>
-    {{ city.temp }}
-  </mat-card-content>
-</mat-card> -->
-
-<!-- <mat-card class="example-card">
-  <mat-card-content>
-    <section class="card flex">
-      <div class="flex-column">
-        <p class="city">
-          {{ city.name }}
-        </p>
-        <p>
-          {{ city.country }}
-        </p>
-      </div>
-      <div class="flex">
-        <p class="temp">{{ city.temp }}°C</p>
-        <img
-          class="icon"
-          src="../assets/icons/{{ city.weather }}.png"
-          alt="{{ city.weather }} icon"
-        />
-      </div>
-    </section>
-  </mat-card-content>
-</mat-card> -->
+  <p class="close-x" (click)="closeCard()">x</p>
+</li>

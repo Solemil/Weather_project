@@ -1,4 +1,10 @@
 <section>
-    <input type="text"  id="textField">
-    <button>Search</button>
+<mat-form-field class="input-field">
+  <mat-label>Search a city</mat-label>
+  <input matInput placeholder="Ex. Paris"  #search (keydown.enter)="searchCity(search.value)">
+</mat-form-field>
+  <button mat-raised-button color="primary" (click)="searchCity(search.value)">Search</button>
 </section>
+
+
+
