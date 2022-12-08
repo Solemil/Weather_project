@@ -1,8 +1,7 @@
-<app-search-box (searchSubmit)="getCityCardInfo($event)"></app-search-box>
-<ul class="drop-area" cdkDropList (cdkDropListDropped)="drop($event)">
-  <app-weather-card
-    *ngFor="let card of cardList; let i = index"
-    [cityCard]="card"
-    (close)="removeCard(i)"
-  ></app-weather-card>
-</ul>
+<main>
+  <app-search-box (searchSubmit)="pushCardInfo($event)"></app-search-box>
+  <ul class="drop-area" cdkDropList (cdkDropListDropped)="drop($event)">
+    <app-weather-card *ngFor="let card of cardList; 
+      let i = index" [cityCard]="card" (close)="removeCard(i)"></app-weather-card>
+  </ul>
+</main>

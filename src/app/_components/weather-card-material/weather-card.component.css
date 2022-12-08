@@ -1,14 +1,9 @@
-/* .example-card {
-  max-width: 400px;
-  margin-bottom: 8px;
-} */
-
 * {
-  margin: 0;
   font-family: "Lato", sans-serif;
 }
 
 .card {
+  box-sizing: border-box;
   margin: 24px 0;
   width: 360px;
   height: 120px;
@@ -40,7 +35,8 @@
 }
 
 .icon {
-  width: 100px;
+  width: 80px;
+  height: 80px;
 }
 .close-x {
   color: black;

@@ -11,26 +11,9 @@
     <p class="temp">{{ cityCard.temp }}°C</p>
     <img
       class="icon"
-      src="../assets/icons/{{ cityCard.icon }}.png"
+      src="http://openweathermap.org/img/w/{{ cityCard.icon }}.png"
       alt="{{ cityCard.icon }} icon"
     />
   </div>
   <p class="close-x" (click)="closeCard()">x</p>
 </li>
-
-<!-- <mat-card class="example-card">
-  <mat-card-header>
-    <mat-card-title-group>
-      <mat-card-title>{{ city.name }}</mat-card-title>
-      <mat-card-subtitle>{{ city.country }}</mat-card-subtitle>
-      <img
-        mat-card-sm-image
-        src="../assets/icons/{{ city.weather }}.png"
-        alt="{{ city.weather }} icon"
-      />
-    </mat-card-title-group>
-  </mat-card-header>
-  <mat-card-content>
-    {{ city.temp }}
-  </mat-card-content>
-</mat-card> -->

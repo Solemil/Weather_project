@@ -2,26 +2,27 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment as env } from 'src/environment/environment';
 import { firstValueFrom } from 'rxjs';
-import { ResultCountry } from '../_models/weather';
+import { ResultWeather, ResultCountry } from '../_models/interfaces';
 
 @Injectable({
   providedIn: 'root',
 })
+
 export class ApiService {
   constructor(private http: HttpClient) {}
 
-  async getWeather(city: string): Promise<WeatherResults> {
+  async getWeather(city: string): Promise<ResultWeather> {
     try {
       let url = `${env.weatherApi.baseURL}${env.weatherApi.getWeather}`;
       url = url.replace('{city name}', city);
       url = url.replace('{API key}', env.weatherApi.weatherApiKey);
 
-      return await firstValueFrom(this.http.get<WeatherResults>(url))
-        .then((res: WeatherResults) => {
+      return await firstValueFrom(this.http.get<ResultWeather>(url))
+        .then((res: ResultWeather) => {
           console.log('getWEather sikeres', res);
           return res;
         }
-      );
+      )
     } catch (error) {
       console.error('getWEather sikertelen', error);
       throw error;
@@ -38,21 +39,13 @@ export class ApiService {
           console.log('getCountry sikeres', res);
           return res[0];
         }
-      );
+      )
     } catch (error) {
       console.error('getCountry sikertelen', error);
       throw error;
     }
   }
-
-
-
-
 }
 
-export interface WeatherResults {
-  main: { temp: number };
-  weather: { main: string }[];
-  sys: { country: string };
-}
+
 

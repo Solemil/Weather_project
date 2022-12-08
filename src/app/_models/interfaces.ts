@@ -2,18 +2,15 @@ export interface CardInfo {
     name?: string;
     country?: string;
     temp?: number;
-    icon?: string
+    icon?: string;
 }
 
 export interface ResultWeather {
-  main: {
-    temp: number;
-  },
-  sys: {
-    country: string;
-  }
-
+  main: { temp: number };
+  weather: { icon: string }[];
+  sys: { country: string };
 }
+
 
 export interface ResultCountry {
   name: {
