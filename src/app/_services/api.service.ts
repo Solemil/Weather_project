@@ -7,6 +7,7 @@ import { ResultWeather, ResultCountry } from '../_models/interfaces';
 @Injectable({
   providedIn: 'root',
 })
+
 export class ApiService {
   constructor(private http: HttpClient) {}
 
@@ -21,7 +22,7 @@ export class ApiService {
           console.log('getWEather sikeres', res);
           return res;
         }
-      );
+      )
     } catch (error) {
       console.error('getWEather sikertelen', error);
       throw error;
@@ -38,16 +39,12 @@ export class ApiService {
           console.log('getCountry sikeres', res);
           return res[0];
         }
-      );
+      )
     } catch (error) {
       console.error('getCountry sikertelen', error);
       throw error;
     }
   }
-
-
-
-
 }
 
 
