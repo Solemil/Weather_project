@@ -8,4 +8,9 @@ export const environment = {
   countryApi: {
     baseURL: 'https://restcountries.com/v3.1/alpha/{Code}',
   },
+
+
+  mapApi: {
+    baseURL: 'https://tile.openweathermap.org/map/temp_new/0/0/0.png?appid=a85aede88ad10fb030e055694b6eb19e',
+  },
 };

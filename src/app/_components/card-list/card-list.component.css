@@ -1,9 +1,16 @@
 main {
     margin: 0 auto;
-    width: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 ul {
+    width: 380px;
     padding: 0;
+    max-height: 80vh;
+    overflow: auto;
+    
 }
 

@@ -7,7 +7,7 @@ import { CardInfo } from 'src/app/_models/interfaces';
   styleUrls: ['./weather-card.component.css'],
 })
 
-export class WeatherCardComponent /* implements OnInit */ {
+export class WeatherCardComponent {
   @Input() cityCard: CardInfo = {};
   @Output() close = new EventEmitter<void>();
   constructor() {}

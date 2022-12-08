@@ -1,9 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
-html,
 body {
-  height: 100%;
+  background-color: black; 
+  background-image: url('https://tile.openweathermap.org/map/temp_new/0/0/0.png?appid=a85aede88ad10fb030e055694b6eb19e');
+  background-size: cover;
+  margin: 0;
+  padding: 0;
 }
-body {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
+
+
